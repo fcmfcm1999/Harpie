@@ -26,6 +26,8 @@ while IFS= read -r job; do
     MINUTE=$(echo "$RUNTIME" | cut -d":" -f2)
     HOUR=$(echo "$RUNTIME" | cut -d":" -f1)
 
+    # 移除前导零
+    HOUR=$(echo "$HOUR" | sed 's/^0*//')
     # 计算本地时区的执行时间
     HOUR=$(( (HOUR - TIME_DIFF + 24) % 24 ))
 
