@@ -37,7 +37,7 @@ pip install requests python-dateutil pysocks
 
 ### 配置定时任务（Crontab）(推荐)
 
-本项目提供了 `cron_setup.sh` 脚本，可自动将定时任务添加到 `crontab`，以便每天在指定时间运行钱包扫描。
+本项目提供了 `cron_setup.sh` 脚本，可自动将定时任务添加到 `crontab`，以便每天在指定时间自动运行钱包扫描。
 
 #### 设置定时任务
 
@@ -55,11 +55,15 @@ pip install requests python-dateutil pysocks
 
 3. 运行成功后，`crontab -l` 命令可以查看已添加的定时任务。
 
+---
+
 ### 运行所有钱包
 
 ```sh
 python script.py
 ```
+
+---
 
 ### 运行指定钱包
 
@@ -72,6 +76,3 @@ python script.py <索引>
 ```sh
 python script.py 0
 ```
-
-
-
