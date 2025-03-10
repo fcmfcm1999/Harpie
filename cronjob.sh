@@ -16,7 +16,7 @@ TIME_DIFF=$((BJ_OFFSET - LOCAL_OFFSET))
 JOBS=$(jq -c '.wallets[]' "$JSON_FILE")
 
 # 清除现有的相关 cron 任务
-crontab -l | grep -v "python3 /root/harpie/main.py" | crontab -
+crontab -l | grep -v "python3 /root/Harpie/main.py" | crontab -
 
 # 遍历 JSON 数据
 NEW_CRON=""
@@ -29,7 +29,7 @@ while IFS= read -r job; do
     # 计算本地时区的执行时间
     HOUR=$(( (HOUR - TIME_DIFF + 24) % 24 ))
 
-    NEW_CRON+="$MINUTE $HOUR * * * python3 /root/harpie/main.py $INDEX >> /root/harpie/output.log 2>&1 &\n"
+    NEW_CRON+="$MINUTE $HOUR * * * python3 /root/Harpie/main.py $INDEX >> /root/Harpie/output.log 2>&1 &\n"
     ((INDEX++))
 done <<< "$JOBS"
 
