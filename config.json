@@ -1,0 +1,16 @@
+{
+  "wallets": [
+    {
+      "address": "0x你的钱包地址1",
+      "proxy": "http://username:password@代理地址:代理端口（可选）",
+      "chainId": 1,
+      "runTime": "06:30"
+    },
+    {
+      "address": "0x你的钱包地址2",
+      "proxy": "socks5h://username:password@代理地址:代理端口（可选）",
+      "chainId": 1,
+      "runTime": "08:41"
+    }
+  ]
+}
